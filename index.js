@@ -7,10 +7,17 @@ bot.on("message", async (msg) => {
   const text = msg.text;
   const firstname = msg.chat.first_name;
 
-if (text == "/start") {
-    bot.sendMessage(chatId, `xushkelipsiz, ${firstname}`)
-    
-}
-
+  if (text == "/start") {
+    bot.sendMessage(chatId, `xushkelipsiz, ${firstname}`, {
+      reply_markup: {
+        keyboard: [[{ text: "BMW M3 malumot lar" }]],
+      },
+    });
+  } else if (text == "BMW M3 malumot lar") {
+    bot.sendMessage(
+      chatId,
+      "BMW M3 - bu nemis avtomobil ishlab chiqaruvchisi BMW tomonidan 1986-yildan beri ishlab chiqarilayotgan yuqori samarali sport avtomobili. U turli avlodlarda turli tana shakllarida (sedan, kupe, kabriolet va universal) mavjud. Eng so'nggi avlodlarida (353) kVt ((480) ot kuchi) gacha bo'lgan (M) TwinPower Turbo inline-6 dvigateli va (0) dan (100) km/soat tezlikka (4.2) soniyada erishish mumkin. "
+    );
+  }
 });
 console.log("ISHGA TUSHDI");
